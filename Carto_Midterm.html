@@ -1,0 +1,966 @@
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>Midterm Jack Moore</title>
+
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+<style>
+   
+</head>
+
+<body>
+
+<style>
+    .mapboxgl-popup {
+        max-width: 400px;
+        font:
+            12px/20px 'Helvetica Neue',
+            Arial,
+            Helvetica,
+            sans-serif;
+    }
+</style>
+
+<div id="map"></div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamFhY20xMDEiLCJhIjoiY203dzY2bjB6MDJhcTJxb2o0bXl3cnc5aSJ9.J-hFvpkbhLdAEczXADkUyQ';  //Put your mapbox access token here
+
+        // Load a new map in the 'map' HTML div
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/jaacm101/cm8yzxdyo003x01t1byf4far7', // Put your mapbox style ID here
+            center: [-104.942114, 39.717785], // starting position [lng, lat]
+            zoom: 11 // starting zoom
+        });
+
+    map.on('load', () => {
+        map.addSource('places', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>DIA</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.6764, 39.8563]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Gateway/Green Valley Ranch</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.7670, 39.786]
+                        }
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Montbello</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.8400, 39.786]
+                          }
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Central Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.8775, 39.773]
+                          }
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Northeast Park Hill</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9198, 39.773]
+                              }
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>North Park Hill</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9198, 39.757]
+                               },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>South Park Hill</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9198, 39.745]
+                               },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>East Colfax</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.8930, 39.7415]
+                                },
+                    },
+                    { 
+                           'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Hale</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9300, 39.7335]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Montclair</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9130, 39.7335] 
+                                },   
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Congress Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9500, 39.7335]
+                                },    
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>City Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9500, 39.745]
+                                },   
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Clayton</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9500, 39.767]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Cole</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9658, 39.767]
+                                },                       
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Whittier</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9658, 39.757]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>City Park West</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9658, 39.745]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Lowry Field</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.8930, 39.7225]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Windsor</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.8885, 39.7010]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Hilltop</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9198, 39.7190]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Cheesman Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9658, 39.7335]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Capitol Hill</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9800, 39.7335]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Speer</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9800, 39.7190]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Country Club</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9658, 39.7222]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>North Capitol Hill</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9800, 39.745]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Washington Park West</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9800, 39.704]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Washington Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9650, 39.704]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Belcaro</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9500, 39.704]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Cherry Creek</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9500, 39.719]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Cory-Merrill</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9500, 39.69]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>University Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9500, 39.674]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Wellshire</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9500, 39.659]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Washington Virginia Vale</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9150, 39.704]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Virginia Village</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9300, 39.69]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Elyria Swansea</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9550, 39.7832]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Five Points</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9800, 39.757]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Globeville</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9870, 39.78]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Union Station</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9995, 39.753]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Highland</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.015, 39.763]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Sunnyside</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.015, 39.776]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Berkeley</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.776]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Regis</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.786]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Chaffee Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.015, 39.786]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>West Highland</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.764]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Sloan Lake</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.7528]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>West Colfax</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.74]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Villa Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.7289]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Barnum West</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.047, 39.717]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Barnum</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.032, 39.717]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Valverde</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.016, 39.717]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Baker</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.997, 39.717]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Lincoln Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.999, 39.7335]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Civic Center</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.991, 39.7335]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Sun Valley</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.021, 39.7335]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Jefferson Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.021, 39.754]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Auraria</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.008, 39.745]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Central Business District</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.991, 39.745]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Athmar Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.011, 39.704]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Westwood</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.704]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Mar Lee</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.69]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Harvey Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.674]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Harvey Park South</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.038, 39.659]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Bear Valley</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.058, 39.659]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Fort Logan</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.042, 39.643]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>College View-South Platte</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.021, 39.674]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Ruby Hill</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.011, 39.6922]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Overland</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.994, 39.683]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Platt Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.981, 39.683]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>University</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.966, 39.674]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Rosedale</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.981, 39.674]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Indian Creek</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.896, 39.687]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Goldsmith</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.912, 39.674]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Hampden</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.893, 39.659]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Hampden South</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.893, 39.643]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Marston</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-105.07, 39.629]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>University Hills</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9300, 39.664]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Southmoor Park</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9250, 39.65]
+                                },
+                    },
+                    { 
+                        'type': 'Feature',
+                        'properties': {
+                            'description':
+                                '<strong>Skyland</p>'
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [-104.9500, 39.757]
+                   
+                        }                   
+                    }
+                ]
+            }
+        });
+        // Add a layer showing the places.
+        map.addLayer({
+            'id': 'places',
+            'type': 'circle',
+            'source': 'places',
+            'paint': {
+                'circle-color': '#4264fb',
+                'circle-radius': 6,
+                'circle-stroke-width': 2,
+                'circle-stroke-color': '#ffffff'
+            }
+        });
+
+        // Create a popup, but don't add it to the map yet.
+        const popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+        });
+
+        map.on('mouseenter', 'places', (e) => {
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+
+            // Copy coordinates array.
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.description;
+
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            if (['mercator', 'equirectangular'].includes(map.getProjection().name)) {
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+            }
+
+            // Populate the popup and set its coordinates
+            // based on the feature found.
+            popup.setLngLat(coordinates).setHTML(description).addTo(map);
+        });
+
+        map.on('mouseleave', 'places', () => {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
+    });
+</script>
+
+</body>
+</html>
+Additional Developer Resources
+Mapbox Developer Discord
+Developer Cheatsheet
+Mapbox Support
+Ask AI
+Was this example helpful?
+© Mapbox All Rights Reserved
+Terms
+Privacy
+Security
+Your California Privacy Choices 
+
+</script>
+
+</body>
+</html>
